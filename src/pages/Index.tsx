@@ -37,6 +37,7 @@ const Index = () => {
             variant="outline" 
             size="lg"
             className="bg-black text-white border-white/20 hover:bg-white/10 hover:text-white group"
+            onClick={() => window.open('mailto:rfppartners01@gmail.com?subject=Inquiry about RFP Global&body=I would like to learn more about your services.', '_blank')}
           >
             <Mail className="mr-2 h-5 w-5 group-hover:text-white" /> 
             <span className="group-hover:text-white">Inquire</span>
