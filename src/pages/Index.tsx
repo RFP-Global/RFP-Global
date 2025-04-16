@@ -7,8 +7,8 @@ const Index = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-black to-[#001A0F] overflow-hidden">
       {/* Background gradient circles with animation */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2EE697]/10 rounded-full blur-[120px] animate-pulse-slow" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#2EE697]/10 rounded-full blur-[120px] animate-pulse-slow delay-1000" />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] animate-pulse-slow origin-center" />
+      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] animate-pulse-slow delay-1000 origin-center" />
       
       <Navbar />
 
@@ -49,3 +49,4 @@ const Index = () => {
 };
 
 export default Index;
+
