@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -88,11 +87,11 @@ export default {
 				},
 				'pulse-slow': {
 					'0%, 100%': {
-						opacity: '0.2',
+						opacity: '0.1',
 						transform: 'scale(1)',
 					},
 					'50%': {
-						opacity: '0.4',
+						opacity: '0.15',
 						transform: 'scale(1.05)',
 					},
 				}

@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
@@ -6,15 +5,15 @@ import { ArrowRight, Mail } from "lucide-react";
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-black to-[#001A0F] overflow-hidden">
-      {/* Background gradient circles with enhanced animation */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2EE697]/30 rounded-full blur-[120px] animate-pulse-slow origin-center" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#2EE697]/30 rounded-full blur-[120px] animate-pulse-slow delay-1000 origin-center" />
+      {/* Background gradient circles with animation */}
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] animate-pulse-slow origin-center" />
+      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] animate-pulse-slow delay-1000 origin-center" />
       
       <Navbar />
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center">
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-medium text-white mb-6 animate-fade-in">
-          Connecting <span className="text-[#2EE697]">borrowers</span> with premium <span className="text-[#2EE697]">lenders</span>. 
+          Connecting vetted <span className="text-[#2EE697]">borrowers</span> with premium <span className="text-[#2EE697]">lenders</span>. 
         </h1>
         
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-12">
@@ -32,10 +31,10 @@ const Index = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="bg-black text-white border-white/20 hover:bg-white/10"
+            className="bg-black text-white border-white/20 hover:bg-white/10 hover:text-white group"
           >
-            <Mail className="mr-2 h-5 w-5" /> 
-            <span>Get in Touch</span>
+            <Mail className="mr-2 h-5 w-5 group-hover:text-white" /> 
+            <span className="group-hover:text-white">Get in Touch</span>
           </Button>
         </div>
       </main>
@@ -49,3 +48,4 @@ const Index = () => {
 };
 
 export default Index;
+
