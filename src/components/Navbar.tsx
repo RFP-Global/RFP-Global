@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 px-6 py-6 md:px-12">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl flex justify-between items-center">
         <div className="flex items-center space-x-2">
           {/* <div className="w-8 h-8 rounded-full border-2 border-[#2EE697] flex items-center justify-center"> */}
             <img 
