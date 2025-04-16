@@ -14,8 +14,8 @@ const Index = () => {
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6 animate-fade-in">
-          Connecting vetted borrowers<br />
-          with <span className="text-[#2EE697]">premium lenders</span>
+          Connecting <span className="text-[#2EE697]">borrowers</span> with <span className="text-[#2EE697]">lenders</span><br />
+          with <span className="text-[#2EE697]">premium</span> matchmaking
         </h1>
         
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-12">
@@ -33,7 +33,7 @@ const Index = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="text-white border-white/20 hover:bg-white/10"
+            className="bg-black text-white border-white/20 hover:bg-white/10"
           >
             <Mail className="mr-2 h-5 w-5" /> Get in Touch
           </Button>

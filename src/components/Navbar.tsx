@@ -7,13 +7,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full border-2 border-[#2EE697] flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#2EE697] to-[#18A167]"></div>
+            <img 
+              src="/lovable-uploads/2651105c-d331-4fad-b617-96466ab46f01.png" 
+              alt="RFP Global Logo" 
+              className="w-6 h-6 rounded-full"
+            />
           </div>
           <span className="text-white text-xl font-medium">RFP GLOBAL</span>
         </div>
-        <Button variant="outline" className="text-white border-white/20 hover:bg-white/10">
-          Contact
-        </Button>
+        {/* Contact button removed */}
       </div>
     </nav>
   );
