@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
+import { ApplyForm } from "@/components/ApplyForm";
 
 const Index = () => {
+  const [applyFormOpen, setApplyFormOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-black to-[#001A0F] overflow-hidden">
       {/* Background gradient circles without animation */}
@@ -25,8 +29,9 @@ const Index = () => {
           <Button 
             size="lg"
             className="bg-[#2EE697] text-black hover:bg-[#2EE697]/90 px-8"
+            onClick={() => setApplyFormOpen(true)}
           >
-            Apply Now <ArrowRight className="ml-2 h-5 w-5" />
+            Apply <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button 
             variant="outline" 
@@ -34,7 +39,7 @@ const Index = () => {
             className="bg-black text-white border-white/20 hover:bg-white/10 hover:text-white group"
           >
             <Mail className="mr-2 h-5 w-5 group-hover:text-white" /> 
-            <span className="group-hover:text-white">Get in Touch</span>
+            <span className="group-hover:text-white">Inquire</span>
           </Button>
         </div>
       </main>
@@ -43,6 +48,9 @@ const Index = () => {
         <span>Austin, TX</span>
         <span>© 2025 RFP Global. All rights reserved.</span>
       </footer>
+
+      {/* Apply Form Dialog */}
+      <ApplyForm open={applyFormOpen} onOpenChange={setApplyFormOpen} />
     </div>
   );
 };
