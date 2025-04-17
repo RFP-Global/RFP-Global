@@ -17,7 +17,7 @@ const Index = () => {
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center">
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-medium text-white mb-6 animate-fade-in">
-          Connecting vetted <span className="text-[#2EE697]">borrowers</span> with premium <span className="text-[#2EE697]">lenders</span>. 
+          Connecting <span className="text-[#2EE697]">vetted</span> borrowers with <span className="text-[#2EE697]">premium </span> lenders. 
         </h1>
         
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-12">

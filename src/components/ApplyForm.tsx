@@ -108,10 +108,10 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-gray-900 border-gray-800 text-white">
           <DialogHeader>
-            <DialogTitle className="text-2xl">Apply Now</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-2xl text-white">Apply Now</DialogTitle>
+            <DialogDescription className="text-gray-400">
               Fill out the form below to start the application process.
             </DialogDescription>
           </DialogHeader>
@@ -124,11 +124,15 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel className="text-gray-300">Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input 
+                          placeholder="John Doe" 
+                          {...field} 
+                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                        />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -138,15 +142,16 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="text-gray-300">Email</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
                           placeholder="john@example.com"
                           {...field}
+                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -158,15 +163,16 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
+                      <FormLabel className="text-gray-300">Phone Number</FormLabel>
                       <FormControl>
                         <Input
                           type="tel"
                           placeholder="(123) 456-7890"
                           {...field}
+                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -176,11 +182,11 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="companyName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company Name</FormLabel>
+                      <FormLabel className="text-gray-300">Company Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Acme Inc." {...field} />
+                        <Input placeholder="Acme Inc." {...field} className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -192,11 +198,11 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="zipCode"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Zip Code</FormLabel>
+                      <FormLabel className="text-gray-300">Zip Code</FormLabel>
                       <FormControl>
-                        <Input placeholder="12345" {...field} />
+                        <Input placeholder="12345" {...field} className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -206,14 +212,15 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                   name="industry"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Industry</FormLabel>
+                      <FormLabel className="text-gray-300">Industry</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Technology, Real Estate, etc."
                           {...field}
+                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -224,7 +231,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                 name="businessType"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
-                    <FormLabel>Business Type</FormLabel>
+                    <FormLabel className="text-gray-300">Business Type</FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
@@ -233,23 +240,23 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                       >
                         <FormItem className="flex items-center space-x-2 space-y-0">
                           <FormControl>
-                            <RadioGroupItem value="borrower" />
+                            <RadioGroupItem value="borrower" className="border-gray-600 text-[#2EE697]" />
                           </FormControl>
-                          <FormLabel className="font-normal cursor-pointer">
+                          <FormLabel className="font-normal cursor-pointer text-white">
                             Borrower
                           </FormLabel>
                         </FormItem>
                         <FormItem className="flex items-center space-x-2 space-y-0">
                           <FormControl>
-                            <RadioGroupItem value="lender" />
+                            <RadioGroupItem value="lender" className="border-gray-600 text-[#2EE697]" />
                           </FormControl>
-                          <FormLabel className="font-normal cursor-pointer">
+                          <FormLabel className="font-normal cursor-pointer text-white">
                             Lender
                           </FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
@@ -259,24 +266,24 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                 name="financingAmount"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Target Financing Amount</FormLabel>
+                    <FormLabel className="text-gray-300">Target Financing Amount</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
                           <SelectValue placeholder="Select an amount range" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent>
+                      <SelectContent className="bg-gray-800 border-gray-700 text-white">
                         <SelectItem value="<$250K">&lt;$250K</SelectItem>
                         <SelectItem value="$250K–$1M">$250K–$1M</SelectItem>
                         <SelectItem value="$1M–$5M">$1M–$5M</SelectItem>
                         <SelectItem value="$5M+">$5M+</SelectItem>
                       </SelectContent>
                     </Select>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
@@ -286,15 +293,15 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                 name="purpose"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Purpose of Financing</FormLabel>
+                    <FormLabel className="text-gray-300">Purpose of Financing</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Please describe your financing needs..."
-                        className="min-h-24"
+                        className="min-h-24 bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-red-400" />
                   </FormItem>
                 )}
               />
