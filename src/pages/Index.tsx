@@ -98,7 +98,7 @@ const Index = () => {
         
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-12">
           RFP elevates financial matchmaking with unparalleled discretion
-          and exclusivity
+          and exclusivity.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">

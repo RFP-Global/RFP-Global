@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# RFP Landing Page
 
-## Project info
+A modern, reactive landing page for RFP Global that connects vetted borrowers with premium lenders. This landing page features a sleek, dynamic UI with interactive elements and a form integration with Airtable.
 
-**URL**: https://lovable.dev/projects/63aa0731-9d30-43f3-8103-a63a08e79897
+## 🚀 Tech Stack
 
-## How can I edit this code?
+### Core Technologies
+- **React 18** - Frontend library for building the user interface
+- **TypeScript** - Type-safe JavaScript for better developer experience
+- **Vite** - Next-generation frontend tooling for fast development and optimized builds
 
-There are several ways of editing your application.
+### UI Framework & Components
+- **TailwindCSS** - Utility-first CSS framework for rapid UI development
+- **shadcn/ui** - High-quality React components built with Radix UI and Tailwind CSS
+- **Radix UI** - Unstyled, accessible components for building high-quality design systems
+- **Lucide Icons** - Beautiful, consistent icon set
 
-**Use Lovable**
+### Routing & State Management
+- **React Router DOM** - Client-side routing for single-page applications
+- **TanStack React Query** - Data fetching, caching, and state management library
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/63aa0731-9d30-43f3-8103-a63a08e79897) and start prompting.
+### Form Handling & Validation
+- **React Hook Form** - Performant, flexible forms with easy validation
+- **Zod** - TypeScript-first schema validation with static type inference
 
-Changes made via Lovable will be committed automatically to this repo.
+### Animation & Interaction
+- **Tailwind Animate** - Animation utilities for Tailwind CSS
+- **Class Variance Authority** - For building type-safe UI component variants
+- **clsx/tailwind-merge** - Utility for constructing CSS class strings conditionally
 
-**Use your preferred IDE**
+### External Services
+- **Airtable API** - External database service for storing form submissions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Developer Tools
+- **ESLint** - Code linting
+- **SWC** - Fast TypeScript/JavaScript compiler used with Vite
+- **PostCSS** - Tool for transforming CSS with JavaScript plugins
+- **Autoprefixer** - PostCSS plugin to parse CSS and add vendor prefixes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📦 Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/     # Reusable UI components 
+├── lib/           # Utilities and services (Airtable integration)
+├── pages/         # Application pages/routes
+├── hooks/         # Custom React hooks
+├── App.tsx        # Main application component
+└── main.tsx       # Application entry point
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js (v16.0.0 or later)
+- npm or yarn package manager
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd landing-page-zenith-react
+```
 
-## What technologies are used for this project?
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-This project is built with:
+3. Configure environment variables:
+Create a `.env` file in the root directory with the following:
+```
+AIRTABLE_API_KEY=<your-airtable-api-key>
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Development
 
-## How can I deploy this project?
+Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Simply open [Lovable](https://lovable.dev/projects/63aa0731-9d30-43f3-8103-a63a08e79897) and click on Share -> Publish.
+The application will be available at http://localhost:8080
 
-## Can I connect a custom domain to my Lovable project?
+### Build
 
-Yes, you can!
+Create a production build:
+```bash
+npm run build
+# or
+yarn build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🌟 Features
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Interactive, animated background that responds to mouse movements
+- Responsive design for all device sizes
+- Form integration with Airtable for lead capture
+- Clean, modern UI with accessible components
+
+## 📝 License
+
+Copyright © 2025 RFP Global. All rights reserved.
