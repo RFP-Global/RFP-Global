@@ -108,7 +108,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-gray-900 border-gray-800 text-white">
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-gradient-to-br from-black to-[#001A0F] border-[#2EE697]/20 text-white">
           <DialogHeader>
             <DialogTitle className="text-2xl text-white">Apply Now</DialogTitle>
             <DialogDescription className="text-gray-400">
@@ -129,7 +129,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                         <Input 
                           placeholder="John Doe" 
                           {...field} 
-                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                          className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20"
                         />
                       </FormControl>
                       <FormMessage className="text-red-400" />
@@ -148,7 +148,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                           type="email"
                           placeholder="john@example.com"
                           {...field}
-                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                          className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20"
                         />
                       </FormControl>
                       <FormMessage className="text-red-400" />
@@ -169,7 +169,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                           type="tel"
                           placeholder="(123) 456-7890"
                           {...field}
-                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                          className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20"
                         />
                       </FormControl>
                       <FormMessage className="text-red-400" />
@@ -184,7 +184,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                     <FormItem>
                       <FormLabel className="text-gray-300">Company Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Acme Inc." {...field} className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500" />
+                        <Input placeholder="Acme Inc." {...field} className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20" />
                       </FormControl>
                       <FormMessage className="text-red-400" />
                     </FormItem>
@@ -200,7 +200,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                     <FormItem>
                       <FormLabel className="text-gray-300">Zip Code</FormLabel>
                       <FormControl>
-                        <Input placeholder="12345" {...field} className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500" />
+                        <Input placeholder="12345" {...field} className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20" />
                       </FormControl>
                       <FormMessage className="text-red-400" />
                     </FormItem>
@@ -217,7 +217,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                         <Input
                           placeholder="Technology, Real Estate, etc."
                           {...field}
-                          className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                          className="bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20"
                         />
                       </FormControl>
                       <FormMessage className="text-red-400" />
@@ -240,7 +240,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                       >
                         <FormItem className="flex items-center space-x-2 space-y-0">
                           <FormControl>
-                            <RadioGroupItem value="borrower" className="border-gray-600 text-[#2EE697]" />
+                            <RadioGroupItem value="borrower" className="border-[#2EE697]/50 text-[#2EE697]" />
                           </FormControl>
                           <FormLabel className="font-normal cursor-pointer text-white">
                             Borrower
@@ -248,7 +248,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                         </FormItem>
                         <FormItem className="flex items-center space-x-2 space-y-0">
                           <FormControl>
-                            <RadioGroupItem value="lender" className="border-gray-600 text-[#2EE697]" />
+                            <RadioGroupItem value="lender" className="border-[#2EE697]/50 text-[#2EE697]" />
                           </FormControl>
                           <FormLabel className="font-normal cursor-pointer text-white">
                             Lender
@@ -272,11 +272,11 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                       defaultValue={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                        <SelectTrigger className="bg-black/50 border-[#2EE697]/20 text-white focus:ring-[#2EE697]/20">
                           <SelectValue placeholder="Select an amount range" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                      <SelectContent className="bg-black border-[#2EE697]/20 text-white">
                         <SelectItem value="<$250K">&lt;$250K</SelectItem>
                         <SelectItem value="$250K–$1M">$250K–$1M</SelectItem>
                         <SelectItem value="$1M–$5M">$1M–$5M</SelectItem>
@@ -297,7 +297,7 @@ export function ApplyForm({ open, onOpenChange }: ApplyFormProps) {
                     <FormControl>
                       <Textarea
                         placeholder="Please describe your financing needs..."
-                        className="min-h-24 bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+                        className="min-h-24 bg-black/50 border-[#2EE697]/20 text-white placeholder:text-gray-500 focus:border-[#2EE697]/50 focus:ring-[#2EE697]/20"
                         {...field}
                       />
                     </FormControl>
