@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
@@ -6,12 +6,88 @@ import { ApplyForm } from "@/components/ApplyForm";
 
 const Index = () => {
   const [applyFormOpen, setApplyFormOpen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Track mouse position for cloud animation
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+        
+        // Calculate relative mouse position within the container
+        const x = (e.clientX - left) / width;
+        const y = (e.clientY - top) / height;
+        
+        setMousePosition({ x, y });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  // Calculate much more dramatic cloud transformations
+  const topCloudStyle = {
+    transform: `translate(${(mousePosition.x - 0.5) * 80}px, ${(mousePosition.y - 0.5) * 80}px) scale(${1 + mousePosition.y * 0.2})`,
+    transition: 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
+    opacity: 0.35 + mousePosition.y * 0.2,
+  };
+
+  const bottomCloudStyle = {
+    transform: `translate(${(mousePosition.x - 0.5) * -100}px, ${(mousePosition.y - 0.5) * -60}px) scale(${1 + (1 - mousePosition.y) * 0.3})`,
+    transition: 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
+    opacity: 0.35 + (1 - mousePosition.y) * 0.2,
+  };
+
+  // Add a third cloud for more visual interest
+  const middleCloudStyle = {
+    transform: `translate(${(mousePosition.x - 0.5) * 120}px, ${(mousePosition.y - 0.5) * -40}px) rotate(${(mousePosition.x - 0.5) * 10}deg)`,
+    transition: 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)',
+    opacity: 0.3 + Math.abs(mousePosition.x - 0.5) * 0.3,
+  };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-black to-[#001A0F] overflow-hidden">
-      {/* Background gradient circles without animation */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] origin-center" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#2EE697]/20 rounded-full blur-[120px] origin-center" />
+    <div 
+      ref={containerRef}
+      className="relative min-h-screen bg-gradient-to-br from-black to-[#001A0F] overflow-hidden"
+    >
+      {/* Main large cloud with enhanced reactivity */}
+      <div 
+        className="absolute top-1/4 right-1/3 w-[700px] h-[700px] bg-[#2EE697]/30 rounded-full blur-[100px] origin-center" 
+        style={topCloudStyle}
+      />
+      
+      {/* Bottom cloud with opposite movement */}
+      <div 
+        className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-[#2EE697]/30 rounded-full blur-[100px] origin-center" 
+        style={bottomCloudStyle}
+      />
+      
+      {/* Middle smaller cloud for more dynamic effect */}
+      <div 
+        className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#2EE697]/25 rounded-full blur-[80px] origin-center -translate-x-1/2 -translate-y-1/2" 
+        style={middleCloudStyle}
+      />
+      
+      {/* Small accent clouds that move dramatically with cursor */}
+      <div 
+        className="absolute top-1/3 left-1/4 w-[200px] h-[200px] bg-[#2EE697]/20 rounded-full blur-[50px]"
+        style={{
+          transform: `translate(${(mousePosition.x - 0.5) * 150}px, ${(mousePosition.y - 0.5) * 150}px)`,
+          transition: 'transform 0.3s ease-out',
+        }}
+      />
+      
+      <div 
+        className="absolute bottom-1/3 right-1/4 w-[250px] h-[250px] bg-[#2EE697]/20 rounded-full blur-[60px]"
+        style={{
+          transform: `translate(${(mousePosition.x - 0.5) * -180}px, ${(mousePosition.y - 0.5) * -120}px)`,
+          transition: 'transform 0.3s ease-out',
+        }}
+      />
       
       <Navbar />
 
@@ -57,4 +133,3 @@ const Index = () => {
 };
 
 export default Index;
-
